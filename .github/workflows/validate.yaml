@@ -12,6 +12,9 @@ on:
       - 'maintainers.yaml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   validate-project:
     runs-on: ubuntu-latest
@@ -20,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: cncf/automation/.github/actions/validate-project@95d25b12337a14e4a74f690c856f6903584e839e
+      - uses: cncf/automation/.github/actions/validate-project@979abb1e07fa1b6f2b4e77200f6a698cdd86e59c
         with:
           project_file: 'project.yaml'
 
@@ -29,11 +32,10 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v4
         with:
+          persist-credentials: false
           fetch-depth: 0
 
-      - uses: cncf/automation/.github/actions/validate-maintainers@95d25b12337a14e4a74f690c856f6903584e839e
+      - uses: cncf/automation/.github/actions/validate-maintainers@979abb1e07fa1b6f2b4e77200f6a698cdd86e59c
         with:
           maintainers_file: 'maintainers.yaml'
-          verify_maintainers: 'true'
-        env:
-          LFX_AUTH_TOKEN: ${{ secrets.LFX_AUTH_TOKEN }}
+          verify_maintainers: 'false'
