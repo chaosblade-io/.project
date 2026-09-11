@@ -1,7 +1,6 @@
 # .project metadata for Chaosblade
 # Documentation: https://github.com/cncf/automation/tree/main/utilities/dot-project
 
-# TODO: Add project description
 # TODO: Add maturity_log entry with TOC issue URL
 # TODO: Set project_lead GitHub handle
 # TODO: Set cncf_slack_channel
@@ -12,7 +11,7 @@
 schema_version: "1.0.0"
 slug: "chaosblade"
 name: "Chaosblade"
-description: ""
+description: "An easy to use and powerful chaos engineering experiment toolkit."
 type: "project"
 # TODO: Set project lead GitHub handle
 # project_lead: "github-handle"
